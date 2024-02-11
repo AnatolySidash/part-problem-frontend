@@ -1,0 +1,7 @@
+.main {
+    min-height: calc(100vh - 84px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 70px;
+ }

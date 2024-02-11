@@ -1,39 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ProblemCard({ problem }) {
 
-   return (
-      <article className="toolscard">
-        <div className='toolscard__info'>
-            <ul className='toolscard__list'>
-                <li className='toolscard__item'>
-                    <h3 className='toolscard__subtitle'>Номер проблемы:</h3>
-                    <p className='toolscard__data'>{problem.problem_code}</p>
-                </li>
-                <li className='toolscard__item'>
-                    <h3 className='toolscard__subtitle'>Описание:</h3>
-                    <p className='toolscard__data'>{problem.problem}</p>
-                </li>
-                <li className='toolscard__item'>
-                    <h3 className='toolscard__subtitle'>Количество:</h3>
-                    <p className='toolscard__data'>{problem.defect_qty}</p>
-                </li>
-                <li className='toolscard__item'>
-                    <h3 className='toolscard__subtitle'>Поставщик:</h3>
-                    <p className='toolscard__data'>{problem.supplier}</p>
-                </li>
-                <li className='toolscard__item'>
-                    <h3 className='toolscard__subtitle'>Временные меры:</h3>
-                    <p className='toolscard__data'>{problem.temp_cm}</p>
-                </li>
-                <li className='toolscard__item'>
-                    <h3 className='toolscard__subtitle'>Постоянные меры:</h3>
-                    <p className='toolscard__data'>{problem.perm_cm}</p>
-                </li>
-            </ul>
-        </div>
-      </article >
-   )
+    return (
+        <>
+            <td className='problemcard__data'><Link className='problemcard__data-link' to={`/problems/${problem.id}`}>{problem?.problem_code}</Link></td>
+            <td className='problemcard__data'>{problem?.problem}</td>
+            <td className='problemcard__data'>{problem?.defect_qty}</td>
+            <td className='problemcard__data'>{problem?.supplier}</td>
+            <td className='problemcard__data'>{problem?.temp_cm}</td>
+            <td className='problemcard__data'>{problem?.temp_cm_date}</td>
+            <td className='problemcard__data'>{problem?.status}</td>
+            <td className='problemcard__data'>{problem?.responsible}</td>
+            <td className='problemcard__data'>{problem?.system}</td>
+        </>
+    )
 }
 
 export default ProblemCard;

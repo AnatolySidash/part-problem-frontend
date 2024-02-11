@@ -1,6 +1,8 @@
 import React from "react";
-// import ReactDOM from "react-dom/client";
-import Main, { loader as mainLoader } from '../Main/Main.js';
+import Main from '../Main/Main.js';
+import Problems, { loader as problemsLoader } from "../Problems/Problems.js";
+import ProblemDetails from "../ProblemDetails/ProblemDetails.js";
+import Layout from '../Layout/Layout.js';
 import { 
   RouterProvider,
   createBrowserRouter, 
@@ -8,13 +10,25 @@ import {
   Route } from "react-router-dom";
 
 const router = createBrowserRouter(createRoutesFromElements(
-  <Route path="/" element={<Main />} loader={mainLoader}/>
+
+  <Route element={<Layout />}>
+    <Route path="/" element={<Main />} />
+    <Route path="problems" element={<Problems />} loader={problemsLoader} />
+    <Route path="problems/:id" element={<ProblemDetails />} />
+  </Route>
 ));
 
 
 function App() {
+
   return (
-    <RouterProvider router={router} />
+    <div className="root">
+      <div className="page">
+        <RouterProvider 
+          router={router} 
+          />
+      </div>
+    </div>
   );
 }
 

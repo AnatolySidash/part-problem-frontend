@@ -1,33 +1,33 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Navigation() {
 
    return (
       <nav className='navigation'>
-         <NavLink to='/' className="navigation__logo">
-            <p>QMS</p>
-         </NavLink>
+         <Link to='/' className="navigation__logo">
+            <p>CMK</p>
+         </Link>
          <ul className="navigation__list">
             <li>
-               <NavLink to="/problems" className="navigation__link">Проблемы</NavLink>
+               <Link to="/problems" className="navigation__link">Проблемы</Link>
             </li>
             <li>
-               <NavLink to="/incoming" className="navigation__link">Входной контроль</NavLink>
+               <Link to="/incoming" className="navigation__link">Входной контроль</Link>
             </li>
             <li>
-               <NavLink to="/audit" className="navigation__link">Аудиты поставщиков</NavLink>
+               <Link to="/audit" className="navigation__link">Аудиты поставщиков</Link>
             </li>
          </ul>
          <ul className="navigation__button-list">
             <li className="navigation__item">
-               <NavLink to="/signup" className="navigation__button">Регистрация</NavLink>
+               <Link to="/signup" className="navigation__button">Регистрация</Link>
             </li>
             <li className="navigation__item">
-               <NavLink to="/signin" className="navigation__button navigation__button_green">Войти</NavLink>
+               <Link to="/signin" className="navigation__button navigation__button_green">Войти</Link>
             </li>
          </ul>
-         <NavLink to="/Profile" className="navigation__button navigation__button_gray">Аккаунт</NavLink>
+         <Link to="/Profile" className="navigation__button navigation__button_gray">Аккаунт</Link>
       </nav>
    )
 }
