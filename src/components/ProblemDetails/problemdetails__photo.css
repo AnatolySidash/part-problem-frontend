@@ -1,0 +1,19 @@
+.problemdetails__photo {
+   width: 100%;
+   height: 100%;
+   border-radius: 3px;
+   border: 1px dashed #000;
+   background-color: rgb(86, 248, 194);
+   background-position: center;
+   background-size: cover;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   transition: all 0.3s ease-in-out;
+}
+
+.problemdetails__photo:hover {
+   background-color: #fff;
+}

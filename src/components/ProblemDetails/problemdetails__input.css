@@ -1,0 +1,13 @@
+.problemdetails__input {
+   padding: 5px;
+   margin: 0;
+   min-height: 22px;
+   border: none;
+   background-color: aquamarine;
+   border-radius: 2px;
+   outline: none;
+}
+
+.problemdetails__input::placeholder {
+   font-size: 14px;
+}

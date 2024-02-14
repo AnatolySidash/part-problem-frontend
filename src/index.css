@@ -52,3 +52,12 @@
 /* ------ProblemDetails------ */
 
 @import url(./components/ProblemDetails/problemdetails.css);
+@import url(./components/ProblemDetails/problemdetails__form.css);
+@import url(./components/ProblemDetails/problemdetails__block.css);
+@import url(./components/ProblemDetails/problemdetails__item.css);
+@import url(./components/ProblemDetails/problemdetails__item-photo.css);
+@import url(./components/ProblemDetails/problemdetails__input.css);
+@import url(./components/ProblemDetails/problemdetails__item_small.css);
+@import url(./components/ProblemDetails/problemdetails__item_medium.css);
+@import url(./components/ProblemDetails/problemdetails__icon.css);
+@import url(./components/ProblemDetails/problemdetails__photo.css);

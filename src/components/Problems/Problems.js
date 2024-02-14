@@ -20,11 +20,13 @@ function Problems() {
                     <thead className='problems__table-head'>
                         <tr className='problems__table-row'>
                             <th scope='col' className='problems__table-data'>Номер</th>
+                            <th scope='col' className='problems__table-data'>Дата обнаружения</th>
+                            <th scope='col' className='problems__table-data'>Модель</th>
+                            <th scope='col' className='problems__table-data'>Компонент</th>
                             <th scope='col' className='problems__table-data'>Описание</th>
                             <th scope='col' className='problems__table-data'>Количество</th>
+                            <th scope='col' className='problems__table-data'>Причина</th>
                             <th scope='col' className='problems__table-data'>Поставщик</th>
-                            <th scope='col' className='problems__table-data'>Временные меры</th>
-                            <th scope='col' className='problems__table-data'>Дата внедрения</th>
                             <th scope='col' className='problems__table-data'>Статус</th>
                             <th scope='col' className='problems__table-data'>Ответственный</th>
                             <th scope='col' className='problems__table-data'>Система</th>

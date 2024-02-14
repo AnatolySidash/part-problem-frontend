@@ -1,0 +1,12 @@
+.problemdetails__item-photo {
+   width: 400px;
+   height: 300px;
+   padding: 5px;
+   box-sizing: border-box;
+   background-color: aquamarine;
+   border-radius: 3px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
