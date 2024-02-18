@@ -61,3 +61,8 @@
 @import url(./components/ProblemDetails/problemdetails__item_medium.css);
 @import url(./components/ProblemDetails/problemdetails__icon.css);
 @import url(./components/ProblemDetails/problemdetails__photo.css);
+@import url(./components/ProblemDetails/input__error.css);
+@import url(./components/ProblemDetails/input__error-message.css);
+
+/* ------Buttons------ */
+@import url(./components/ProblemDetails/savebutton.css);

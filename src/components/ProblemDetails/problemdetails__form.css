@@ -1,8 +1,9 @@
 .problemdetails__form {
-   margin: 0;
+   margin: 0 0 50px 0;
    padding: 0;
    display: flex;
    flex-direction: column;
    border: none;
    gap: 15px;
+   position: relative;
 }

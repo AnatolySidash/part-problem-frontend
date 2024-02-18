@@ -1,0 +1,21 @@
+.savebutton {
+   position: absolute;
+   top: -50px;
+   right: 250px;
+   max-width: 200px;
+   padding: 10px 25px;
+   border: none;
+   border-radius: 3px;
+   background-color: blueviolet;
+   color: #fff;
+   cursor: pointer;
+   transition: all 0.3s ease-in-out;
+}
+
+.savebutton:hover {
+   opacity: 0.8;
+}
+
+.savebutton:disabled {
+   background-color: grey;
+}
