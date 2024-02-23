@@ -14,14 +14,23 @@
 
 @import url(./components/App/page.css);
 
+/* ------Layout------ */
+
+@import url(./components/Layout/wrapper.css);
+
 /* ------Header------ */
 
 @import url(./components/Header/header.css);
+
+/* ------Footer------ */
+
+@import url(./components/Footer/footer.css);
 
 /* ------Navigation------ */
 
 @import url(./components/Navigation/navigation.css);
 @import url(./components/Navigation/navigation__logo.css);
+@import url(./components/Navigation/navigation__icon.css);
 @import url(./components/Navigation/navigation__list.css);
 @import url(./components/Navigation/navigation__link.css);
 @import url(./components/Navigation/navigation__button-list.css);
@@ -30,6 +39,11 @@
 /* ------Main------ */
 
 @import url(./components/Main/main.css);
+
+/* ------ProblemLayout------ */
+
+@import url(./components/ProblemsLayout/problemslayout__nav.css);
+@import url(./components/ProblemsLayout/problemslayout__link.css);
 
 /* ------Problems------ */
 
@@ -65,4 +79,5 @@
 @import url(./components/ProblemDetails/input__error-message.css);
 
 /* ------Buttons------ */
+
 @import url(./components/ProblemDetails/savebutton.css);

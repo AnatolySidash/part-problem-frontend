@@ -1,0 +1,8 @@
+.problemslayout__nav {
+    padding: 25px 70px;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}

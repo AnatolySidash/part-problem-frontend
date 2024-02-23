@@ -1,33 +1,34 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import icon from '../../images/graph.svg';
 
 function Navigation() {
 
    return (
       <nav className='navigation'>
          <Link to='/' className="navigation__logo">
-            <p>CMK</p>
+            <img src={icon} alt='icon' className='navigation__icon' />
          </Link>
          <ul className="navigation__list">
             <li>
-               <Link to="/problems" className="navigation__link">Проблемы</Link>
+               <NavLink to="/problems" className="navigation__link">Проблемы</NavLink>
             </li>
             <li>
-               <Link to="/incoming" className="navigation__link">Входной контроль</Link>
+               <NavLink to="/inspection" className="navigation__link">Входной контроль</NavLink>
             </li>
             <li>
-               <Link to="/audit" className="navigation__link">Аудиты поставщиков</Link>
+               <NavLink to="/audit" className="navigation__link">Аудиты поставщиков</NavLink>
             </li>
          </ul>
          <ul className="navigation__button-list">
             <li className="navigation__item">
-               <Link to="/signup" className="navigation__button">Регистрация</Link>
+               <NavLink to="/signup" className="navigation__button">Регистрация</NavLink>
             </li>
             <li className="navigation__item">
-               <Link to="/signin" className="navigation__button navigation__button_green">Войти</Link>
+               <NavLink to="/signin" className="navigation__button navigation__button_green">Войти</NavLink>
             </li>
          </ul>
-         <Link to="/Profile" className="navigation__button navigation__button_gray">Аккаунт</Link>
+         <NavLink to="/Profile" className="navigation__button navigation__button_gray">Аккаунт</NavLink>
       </nav>
    )
 }

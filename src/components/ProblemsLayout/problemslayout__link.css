@@ -1,0 +1,16 @@
+.problemslayout__link {
+    text-decoration: none;
+    display: block;
+    color: #757171;
+    font-size: 2em;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.problemslayout__link:hover {
+    color:#919bf0;
+}
+
+.active {
+    color: #919bf0;
+}
