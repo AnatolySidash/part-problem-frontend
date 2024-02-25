@@ -81,3 +81,9 @@
 /* ------Buttons------ */
 
 @import url(./components/ProblemDetails/savebutton.css);
+
+/* ------AnalysisLayout------ */
+
+@import url(./components/AnalysisLayout/analysislayout__nav.css);
+@import url(./components/AnalysisLayout/analysislayout__link.css);
+@import url(./components/AnalysisLayout/analysis__container.css);

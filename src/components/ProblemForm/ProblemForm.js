@@ -2,7 +2,7 @@ import React from 'react';
 import icon from '../../images/upload.svg';
 import { useFormik } from 'formik';
 import { problemSchema } from '../../schemas/schema';
-import ImagePreview from '../ImagePreview/ImagePreview';
+import ProblemImagePreview from '../ProblemImagePreview/ProblemImagePreview';
 
 function ProblemForm({ problem }) {
 
@@ -58,9 +58,9 @@ function ProblemForm({ problem }) {
          defect_qty_6: problem.defect_qty_6 !== null ? problem.defect_qty_6 : '',
          action_6: problem.action_6 !== null ? problem.action_6 : '',
          comment_6: problem.comment_6 !== null ? problem.comment_6 : '',
-         image_1: '',
-         image_2: '',
-         image_3: ''
+         image_1: problem.image_1,
+         image_2: problem.image_2,
+         image_3: problem.image_3
       },
       validationSchema: problemSchema,
       onSubmit
@@ -398,7 +398,7 @@ function ProblemForm({ problem }) {
                   hidden
                >
                </input>
-               {formik.values.image_1 ? <ImagePreview file={formik.values.image_1} /> : <div className='problemdetails__photo' id='problem_photo_1'>
+               {formik.values.image_1 ? <ProblemImagePreview file={formik.values.image_1} /> : <div className='problemdetails__photo' id='problem_photo_1'>
                   <img src={icon} alt='круг со стрелкой вверх в качестве иконки для загрузки изображений' className='problemdetails__icon' />
                   <p>Кликните чтобы добавить фото</p>
                </div>}
@@ -415,7 +415,7 @@ function ProblemForm({ problem }) {
                   hidden
                >
                </input>
-               {formik.values.image_2 ? <ImagePreview file={formik.values.image_2} /> : <div className='problemdetails__photo' id='problem_photo_1'>
+               {formik.values.image_2 ? <ProblemImagePreview file={formik.values.image_2} /> : <div className='problemdetails__photo' id='problem_photo_1'>
                   <img src={icon} alt='круг со стрелкой вверх в качестве иконки для загрузки изображений' className='problemdetails__icon' />
                   <p>Кликните чтобы добавить фото</p>
                </div>}
@@ -432,7 +432,7 @@ function ProblemForm({ problem }) {
                   hidden
                >
                </input>
-               {formik.values.image_3 ? <ImagePreview file={formik.values.image_3} /> : <div className='problemdetails__photo' id='problem_photo_1'>
+               {formik.values.image_3 ? <ProblemImagePreview file={formik.values.image_3} /> : <div className='problemdetails__photo' id='problem_photo_1'>
                   <img src={icon} alt='круг со стрелкой вверх в качестве иконки для загрузки изображений' className='problemdetails__icon' />
                   <p>Кликните чтобы добавить фото</p>
                </div>}

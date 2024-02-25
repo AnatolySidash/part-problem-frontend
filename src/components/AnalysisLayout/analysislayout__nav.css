@@ -1,0 +1,15 @@
+.analysislayout__nav {
+   padding: 0 0 0 70px;
+   position: relative;
+}
+
+.analysislayout__nav::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   right: -20px;
+   width: 1px;
+   background-color: #757171;
+   height: 70vh;
+   z-index: 2;
+}

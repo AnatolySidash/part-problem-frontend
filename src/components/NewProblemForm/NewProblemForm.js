@@ -2,14 +2,72 @@ import React from 'react';
 import icon from '../../images/upload.svg';
 import { useFormik } from 'formik';
 import { problemSchema } from '../../schemas/schema';
+import { postNewProblemData } from '../../utils/MainApi';
 import ImagePreview from '../ImagePreview/ImagePreview';
+import { date } from 'yup';
 
 function NewProblemForm() {
 
+
    const onSubmit = async (values, actions) => {
-      console.log(values);
-      await new Promise((res) => setTimeout(res, 1000));
-      actions.resetForm();
+
+      const formData = new FormData();
+
+      formData.append('occur_date', values.occur_date);
+      formData.append('part_number', values.part_number);
+      formData.append('part_name', values.part_name);
+      formData.append('model', values.model);
+      formData.append('part_type', values.part_type);
+      formData.append('problem_code', values.problem_code);
+      formData.append('problem', values.problem);
+      formData.append('defect_qty', values.defect_qty);
+      formData.append('reason', values.reason);
+      formData.append('supplier', values.supplier);
+      formData.append('temp_cm', values.temp_cm);
+      formData.append('temp_cm_date', values.temp_cm_date);
+      formData.append('perm_cm', values.perm_cm);
+      formData.append('perm_cm_date', values.perm_cm_date);
+      formData.append('status', values.status);
+      formData.append('action', values.action);
+      formData.append('responsible', values.responsible);
+      formData.append('system', values.system);
+      formData.append('comment', values.comment);
+      formData.append('part_number_2', values.part_number_2);
+      formData.append('occur_date_2', values.occur_date_2);
+      formData.append('defect_qty_2', values.defect_qty_2);
+      formData.append('action_2', values.action_2);
+      formData.append('comment_2', values.comment_2);
+      formData.append('part_number_3', values.part_number_3);
+      formData.append('occur_date_3', values.occur_date_3);
+      formData.append('defect_qty_3', values.defect_qty_3);
+      formData.append('action_3', values.action_3);
+      formData.append('comment_3', values.comment_3);
+      formData.append('part_number_4', values.part_number_4);
+      formData.append('occur_date_4', values.occur_date_4);
+      formData.append('defect_qty_4', values.defect_qty_4);
+      formData.append('action_4', values.action_4);
+      formData.append('comment_4', values.comment_4);
+      formData.append('part_number_5', values.part_number_5);
+      formData.append('occur_date_5', values.occur_date_5);
+      formData.append('defect_qty_5', values.defect_qty_5);
+      formData.append('action_5', values.action_5);
+      formData.append('comment_5', values.comment_5);
+      formData.append('part_number_6', values.part_number_6);
+      formData.append('occur_date_6', values.occur_date_6);
+      formData.append('defect_qty_6', values.defect_qty_6);
+      formData.append('action_6', values.action_6);
+      formData.append('comment_6', values.comment_6);
+      formData.append('image_1', values.image_1);
+      formData.append('image_2', values.image_2);
+      formData.append('image_3', values.image_3);
+
+      await postNewProblemData(formData)
+         .then(res => {
+            console.log(res);
+         })
+         .catch(err => console.log(err));
+
+      // actions.resetForm();
    }
 
    const formik = useFormik({
@@ -34,28 +92,28 @@ function NewProblemForm() {
          system: '',
          comment: '',
          part_number_2: '',
-         occur_date_2: '',
-         defect_qty_2: '',
+         occur_date_2: new Date('01-02-2020').toISOString().slice(0, 10),
+         defect_qty_2: 0,
          action_2: '',
          comment_2: '',
          part_number_3: '',
-         occur_date_3: '',
-         defect_qty_3: '',
+         occur_date_3: new Date('01-02-2020').toISOString().slice(0, 10),
+         defect_qty_3: 0,
          action_3: '',
          comment_3: '',
          part_number_4: '',
-         occur_date_4: '',
-         defect_qty_4: '',
+         occur_date_4: new Date('01-02-2020').toISOString().slice(0, 10),
+         defect_qty_4: 0,
          action_4: '',
          comment_4: '',
          part_number_5: '',
-         occur_date_5: '',
-         defect_qty_5: '',
+         occur_date_5: new Date('01-02-2020').toISOString().slice(0, 10),
+         defect_qty_5: 0,
          action_5: '',
          comment_5: '',
          part_number_6: '',
-         occur_date_6: '',
-         defect_qty_6: '',
+         occur_date_6: new Date('01-02-2020').toISOString().slice(0, 10),
+         defect_qty_6: 0,
          action_6: '',
          comment_6: '',
          image_1: '',
@@ -67,7 +125,7 @@ function NewProblemForm() {
    })
 
    return (
-      <form className='problemdetails__form' autoComplete='off' onSubmit={formik.handleSubmit}>
+      <form className='problemdetails__form' encType='multipart/form-data' autoComplete='off' onSubmit={formik.handleSubmit}>
          <button type='submit' disabled={formik.isSubmitting} className='savebutton'>Сохранить</button>
          <fieldset className='problemdetails__block'>
             <label htmlFor='part_number' className='problemdetails__item'>Номер компонента
@@ -415,7 +473,7 @@ function NewProblemForm() {
                   hidden
                >
                </input>
-               {formik.values.image_2 ? <ImagePreview file={formik.values.image_2} /> : <div className='problemdetails__photo' id='problem_photo_1'>
+               {formik.values.image_2 ? <ImagePreview file={formik.values.image_2} /> : <div className='problemdetails__photo' id='problem_photo_2'>
                   <img src={icon} alt='круг со стрелкой вверх в качестве иконки для загрузки изображений' className='problemdetails__icon' />
                   <p>Кликните чтобы добавить фото</p>
                </div>}
@@ -432,7 +490,7 @@ function NewProblemForm() {
                   hidden
                >
                </input>
-               {formik.values.image_3 ? <ImagePreview file={formik.values.image_3} /> : <div className='problemdetails__photo' id='problem_photo_1'>
+               {formik.values.image_3 ? <ImagePreview file={formik.values.image_3} /> : <div className='problemdetails__photo' id='problem_photo_3'>
                   <img src={icon} alt='круг со стрелкой вверх в качестве иконки для загрузки изображений' className='problemdetails__icon' />
                   <p>Кликните чтобы добавить фото</p>
                </div>}
@@ -584,7 +642,7 @@ function NewProblemForm() {
                   id='part_number_4'
                   name='part_number_4'
                   className='problemdetails__input'
-                  type='text'
+                  type='number'
                   value={formik.values.part_number_4}
                   onChange={formik.handleChange}
                   placeholder='Номер компонента'

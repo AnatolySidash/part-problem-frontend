@@ -35,3 +35,16 @@ export const getProblemDetail = async (id) => {
         }
     }
 }
+
+export const postNewProblemData = async (data) => {
+    try {
+        const res = await axios.post(`${MAIN_URL}/problems/`, data);
+        return res;
+    } catch (error) {
+        if (axios.isAxiosError(error)) {
+            console.log(error.response?.data.message, 'error');
+        } else if (error instanceof Error) {
+            console.log(error.message);
+        }
+    }
+}
