@@ -87,3 +87,16 @@
 @import url(./components/AnalysisLayout/analysislayout__nav.css);
 @import url(./components/AnalysisLayout/analysislayout__link.css);
 @import url(./components/AnalysisLayout/analysis__container.css);
+
+/* ------Analysis------ */
+
+@import url(./components/ProblemAnalysisPages/MainAnalysis/analysis__title.css);
+@import url(./components/ProblemAnalysisPages/MainAnalysis/analysis__list.css);
+@import url(./components/ProblemAnalysisPages/MainAnalysis/analysis__data.css);
+@import url(./components/ProblemAnalysisPages/MainAnalysis/analysis__item.css);
+@import url(./components/ProblemAnalysisPages/MainAnalysis/analysis__item_long.css);
+
+/* ------Charts------ */
+
+@import url(./components/Charts/chart__container.css);
+@import url(./components/Charts/chart__title.css);

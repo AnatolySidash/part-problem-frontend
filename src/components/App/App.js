@@ -9,12 +9,13 @@ import InspectionInline from "../InspectionInline/InspectionInline.js";
 import InspectionWarehouse from "../InspectionWarehouse/InspectionWarehouse.js"
 import InspectionAnalysis from "../InspectionAnalysis/InspectionAnalysis.js";
 import AnalysisLayout from "../AnalysisLayout/AnalysisLayout.js";
-import MainAnalysis from "../MainAnalysis/MainAnalysis.js";
-import SupplierProblem from "../SupplierProblem/SupplierProblem.js";
-import StorageProblem from "../StorageProblem/StorageProblem.js";
+import MainAnalysis from "../ProblemAnalysisPages/MainAnalysis/MainAnalysis.js";
+import SupplierProblem from "../ProblemAnalysisPages/SupplierProblem/SupplierProblem.js";
+import StorageProblem from "../ProblemAnalysisPages/StorageProblem/StorageProblem.js";
 import ProblemByModel from "../ProblemByModel/ProblemByModel.js";
 import ProblemBySystem from "../ProblemBySystem/ProblemBySystem.js";
-import ProblemByAction from "../ProblemByAction/ProblemByAction.js";
+import ProblemByAction from "../ProblemAnalysisPages/ProblemByAction/ProblemByAction.js";
+import ProblemBySpecialist from "../ProblemAnalysisPages/ProblemBySpecialist/ProblemBySpecialist.js"
 import Layout from '../Layout/Layout.js';
 import {
   RouterProvider,
@@ -37,6 +38,7 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route path="model" element={<ProblemByModel />} />
         <Route path="system" element={<ProblemBySystem />} />
         <Route path="action" element={<ProblemByAction />} />
+        <Route path="specialist" element={<ProblemBySpecialist />} />
       </Route>
     </Route>
     <Route path="problems/:id" element={<ProblemDetails />} />

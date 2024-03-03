@@ -1,5 +1,6 @@
 .analysis__container {
-   padding: 20px 0 0 0;
+   height: 70vh;
+   padding: 20px 70px 0 70px;
    gap: 40px;
    margin: 0;
    display: flex;

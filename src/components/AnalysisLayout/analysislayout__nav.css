@@ -1,5 +1,6 @@
 .analysislayout__nav {
-   padding: 0 0 0 70px;
+   padding: 0;
+   min-width: 220px;
    position: relative;
 }
 
