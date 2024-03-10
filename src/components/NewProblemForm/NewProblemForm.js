@@ -67,7 +67,7 @@ function NewProblemForm() {
          })
          .catch(err => console.log(err));
 
-      // actions.resetForm();
+      actions.resetForm();
    }
 
    const formik = useFormik({

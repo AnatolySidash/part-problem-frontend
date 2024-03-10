@@ -100,3 +100,30 @@
 
 @import url(./components/Charts/chart__container.css);
 @import url(./components/Charts/chart__title.css);
+
+/* ------SupplierProblem------ */
+
+@import url(./components/ProblemAnalysisPages/SupplierProblem/problem__data.css);
+@import url(./components/ProblemAnalysisPages/SupplierProblem/problem__container.css);
+@import url(./components/ProblemAnalysisPages/SupplierProblem/problem__title.css);
+@import url(./components/ProblemAnalysisPages/SupplierProblem/problem__list.css);
+@import url(./components/ProblemAnalysisPages/SupplierProblem/problem__block.css);
+
+/* ------SupplierCard------ */
+
+@import url(./components/SupplierCard/suppliercard__list.css);
+@import url(./components/SupplierCard/suppliercard__item.css);
+@import url(./components/SupplierCard/suppliercard.css);
+
+/* ------TopProblemCard------ */
+
+@import url(./components/TopProblemCard/topproblemcard.css);
+@import url(./components/TopProblemCard/topproblemcard__title.css);
+@import url(./components/TopProblemCard/topproblemcard__image.css);
+@import url(./components/TopProblemCard/topproblemcard__list.css);
+@import url(./components/TopProblemCard/topproblemcard__item.css);
+@import url(./components/TopProblemCard/topproblemcard__data.css);
+
+/* ------TopProblemImagePreview------ */
+
+@import url(./components/TopProblemImagePreview/topproblemdetails__photo.css);

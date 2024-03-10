@@ -2,4 +2,9 @@
    text-decoration: none;
    color: #000;
    font-weight: 500;
+   transition: color 0.3s ease-in-out;
+}
+
+.problemcard__data-link:hover {
+   color: #919bf0;
 }

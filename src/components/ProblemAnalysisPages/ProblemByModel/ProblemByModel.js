@@ -1,10 +1,25 @@
 import React from 'react';
-import BarChart from '../Charts/BarChart';
-import { ProblemData } from '../../utils/Database';
+import BarChart from '../../Charts/BarChart';
+import { useLoaderData } from 'react-router-dom';
+import { getProblemData } from '../../../utils/MainApi';
+
+export function loader() {
+   return getProblemData();
+}
 
 function ProblemByModel() {
 
-   const defectByModel = ProblemData.reduce((newArray, element) => {
+   const problems = useLoaderData();
+
+   const storageProblemList = problems.filter(item => item.reason === 'Хранение');
+   const partProblemList = problems.filter(item => item.reason === 'Поставщик');
+
+   const storageDefectByModel = storageProblemList.reduce((newArray, element) => {
+      newArray[element.model] = (newArray[element.model] || 0) + parseInt(element.defect_qty);
+      return newArray
+   }, {});
+
+   const partDefectByModel = partProblemList.reduce((newArray, element) => {
       newArray[element.model] = (newArray[element.model] || 0) + parseInt(element.defect_qty);
       return newArray
    }, {});
@@ -13,8 +28,18 @@ function ProblemByModel() {
       labels: ['HCr', 'FB', 'SU2r'],
       datasets: [
          {
-            label: "Количество дефектов",
-            data: defectByModel,
+            label: "Дефекты хранения",
+            data: storageDefectByModel,
+            backgroundColor: [
+               'lightgray',
+            ]
+         },
+         {
+            label: "Дефекты поставщика",
+            data: partDefectByModel,
+            backgroundColor: [
+               'skyblue',
+            ]
          }
       ],
    })

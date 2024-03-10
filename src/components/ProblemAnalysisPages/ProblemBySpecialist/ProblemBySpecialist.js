@@ -1,16 +1,22 @@
 import React from 'react';
 import BarChart from '../../Charts/BarChart';
-import { ProblemData } from '../../../utils/Database';
+import { useLoaderData } from 'react-router-dom';
+import { getProblemData } from '../../../utils/MainApi';
 
+export function loader() {
+   return getProblemData();
+}
 
 function ProblemBySpecialist() {
 
-   const defectByPerson = ProblemData.reduce((newArray, element) => {
+   const problems = useLoaderData();
+
+   const defectByPerson = problems.reduce((newArray, element) => {
       newArray[element.responsible] = (newArray[element.responsible] || 0) + parseInt(element.defect_qty);
       return newArray
    }, {});
 
-   const problemByPerson = ProblemData.reduce((newArray, element) => {
+   const problemByPerson = problems.reduce((newArray, element) => {
       newArray[element.responsible] = (newArray[element.responsible] || 0) + element.problem_code.length / 5;
       return newArray
    }, {});

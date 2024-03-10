@@ -1,16 +1,31 @@
 import React from 'react';
 import LongBarChart from '../../Charts/LongBarChart';
-import { ProblemData } from '../../../utils/Database';
+import { useLoaderData } from 'react-router-dom';
+import { getProblemData } from '../../../utils/MainApi';
 import DoughnutChart from '../../Charts/DoughnutChart';
+
+export function loader() {
+   return getProblemData();
+}
 
 function MainAnalysis() {
 
-   const defectByMonth = ProblemData.reduce((newArray, element) => {
+   const problems = useLoaderData();
+
+   const storageProblemList = problems.filter(item => item.reason === 'Хранение');
+   const partProblemList = problems.filter(item => item.reason === 'Поставщик');
+
+   const storageDefectByMonth = storageProblemList.reduce((newArray, element) => {
       newArray[new Date(element.occur_date).toLocaleString('ru-RU', { month: 'long' })] = (newArray[new Date(element.occur_date).toLocaleString('ru-RU', { month: 'long' })] || 0) + parseInt(element.defect_qty);
       return newArray
    }, {});
 
-   const defectByReason = ProblemData.reduce((newArray, element) => {
+   const partDefectByMonth = partProblemList.reduce((newArray, element) => {
+      newArray[new Date(element.occur_date).toLocaleString('ru-RU', { month: 'long' })] = (newArray[new Date(element.occur_date).toLocaleString('ru-RU', { month: 'long' })] || 0) + parseInt(element.defect_qty);
+      return newArray
+   }, {});
+
+   const defectByReason = problems.reduce((newArray, element) => {
       newArray[element.reason] = (newArray[element.reason] || 0) + parseInt(element.defect_qty);
       return newArray
    }, {});
@@ -19,23 +34,31 @@ function MainAnalysis() {
       labels: ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'],
       datasets: [
          {
-            label: "Количество дефектов",
-            data: defectByMonth,
+            label: "Дефекты поставщика",
+            data: partDefectByMonth,
+            backgroundColor: [
+               'lightgray',
+            ]
+         },
+         {
+            label: "Дефекты хранения",
+            data: storageDefectByMonth,
+            backgroundColor: [
+               'skyblue',
+            ]
          }
       ],
    })
 
-   console.log(defectByMonth)
-
    const [byReasonChartData, setByReasonChartData] = React.useState({
-      labels: ['Хранение', 'Поставщик'],
+      labels: ['Поставщик', 'Хранение'],
       datasets: [
          {
             label: "Количество дефектов",
             data: Object.values(defectByReason),
             backgroundColor: [
-               'skyblue',
                'lightgray',
+               'skyblue',
             ]
          },
       ],

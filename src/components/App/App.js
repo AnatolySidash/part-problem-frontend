@@ -12,8 +12,8 @@ import AnalysisLayout from "../AnalysisLayout/AnalysisLayout.js";
 import MainAnalysis from "../ProblemAnalysisPages/MainAnalysis/MainAnalysis.js";
 import SupplierProblem from "../ProblemAnalysisPages/SupplierProblem/SupplierProblem.js";
 import StorageProblem from "../ProblemAnalysisPages/StorageProblem/StorageProblem.js";
-import ProblemByModel from "../ProblemByModel/ProblemByModel.js";
-import ProblemBySystem from "../ProblemBySystem/ProblemBySystem.js";
+import ProblemByModel from "../ProblemAnalysisPages/ProblemByModel//ProblemByModel.js";
+import ProblemBySystem from "../ProblemAnalysisPages/ProblemBySystem/ProblemBySystem.js";
 import ProblemByAction from "../ProblemAnalysisPages/ProblemByAction/ProblemByAction.js";
 import ProblemBySpecialist from "../ProblemAnalysisPages/ProblemBySpecialist/ProblemBySpecialist.js"
 import Layout from '../Layout/Layout.js';
@@ -32,13 +32,13 @@ const router = createBrowserRouter(createRoutesFromElements(
       <Route index element={<Problems />} loader={problemsLoader} />
       <Route path="newproblem" element={<NewProblem />} />
       <Route path="analysis" element={<AnalysisLayout />}>
-        <Route index element={<MainAnalysis />} />
-        <Route path="supplier" element={<SupplierProblem />} />
+        <Route index element={<MainAnalysis />} loader={problemsLoader} />
+        <Route path="supplier" element={<SupplierProblem />} loader={problemsLoader} />
         <Route path="storage" element={<StorageProblem />} />
-        <Route path="model" element={<ProblemByModel />} />
-        <Route path="system" element={<ProblemBySystem />} />
-        <Route path="action" element={<ProblemByAction />} />
-        <Route path="specialist" element={<ProblemBySpecialist />} />
+        <Route path="model" element={<ProblemByModel />} loader={problemsLoader} />
+        <Route path="system" element={<ProblemBySystem />} loader={problemsLoader} />
+        <Route path="action" element={<ProblemByAction />} loader={problemsLoader} />
+        <Route path="specialist" element={<ProblemBySpecialist />} loader={problemsLoader} />
       </Route>
     </Route>
     <Route path="problems/:id" element={<ProblemDetails />} />

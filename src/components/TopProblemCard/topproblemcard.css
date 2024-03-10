@@ -1,0 +1,8 @@
+.topproblemcard {
+   box-sizing: border-box;
+   padding: 5px 10px;
+   margin: 10px 0;
+   width: 100%;
+   background-color: aquamarine;
+   border-radius: 3px;
+}
