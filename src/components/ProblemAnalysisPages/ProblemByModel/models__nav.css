@@ -1,0 +1,7 @@
+.models__nav {
+   position: absolute;
+   top: 191px;
+   right: 90px;
+   display: flex;
+   gap: 10px;
+}

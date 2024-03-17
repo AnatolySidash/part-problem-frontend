@@ -1,7 +1,14 @@
 import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useLoaderData } from 'react-router-dom';
+import { getProblemData } from '../../utils/MainApi';
+
+export function loader() {
+    return getProblemData();
+}
 
 function ProblemsLayout() {
+
+    const problems = useLoaderData();
 
     return (
         <>
@@ -10,7 +17,7 @@ function ProblemsLayout() {
                 <NavLink className={({ isActive }) => isActive ? 'problemslayout__link active' : 'problemslayout__link'} to='newproblem'>Новая проблема</NavLink>
                 <NavLink className={({ isActive }) => isActive ? 'problemslayout__link active' : 'problemslayout__link'} to='analysis'>Аналитика</NavLink>
             </nav >
-            <Outlet />
+            <Outlet context={problems} />
         </>
     )
 }

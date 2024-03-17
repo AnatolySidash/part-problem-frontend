@@ -4,3 +4,7 @@
    margin: 0;
    min-width: 33%;
 }
+
+.suppliercard__item:not(:first-child) {
+   min-width: 26%;
+}

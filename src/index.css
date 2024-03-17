@@ -63,6 +63,15 @@
 @import url(./components/ProblemCard/problemcard__data.css);
 @import url(./components/ProblemCard/problemcard__data-link.css);
 
+/* ------ProblemList------ */
+
+@import url(./components/ProblemList/datepicker.css);
+@import url(./components/ProblemList/datepicker__title.css);
+@import url(./components/ProblemList/problems__search-block.css);
+@import url(./components/ProblemList/problems__search-label.css);
+@import url(./components/ProblemList/problems__search-input.css);
+@import url(./components/ProblemList/problems__search-button.css);
+
 /* ------ProblemDetails------ */
 
 @import url(./components/ProblemDetails/problemdetails.css);
@@ -123,7 +132,17 @@
 @import url(./components/TopProblemCard/topproblemcard__list.css);
 @import url(./components/TopProblemCard/topproblemcard__item.css);
 @import url(./components/TopProblemCard/topproblemcard__data.css);
+@import url(./components/TopProblemCard/topproblemcard__data-link.css);
 
 /* ------TopProblemImagePreview------ */
 
 @import url(./components/TopProblemImagePreview/topproblemdetails__photo.css);
+
+/* ------ModelPages------ */
+
+@import url(./components/ModelPages/problem__container_model.css);
+
+/* ------ProblemsByModel------ */
+
+@import url(./components/ProblemAnalysisPages/ProblemByModel/models__nav.css);
+@import url(./components/ProblemAnalysisPages/ProblemByModel/models__link.css);

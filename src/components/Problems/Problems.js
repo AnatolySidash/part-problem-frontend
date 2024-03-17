@@ -1,15 +1,10 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
-import { getProblemData } from '../../utils/MainApi';
 import ProblemList from '../ProblemList/ProblemList';
-
-export function loader() {
-    return getProblemData();
-}
+import { useOutletContext } from 'react-router-dom';
 
 function Problems() {
 
-    const problems = useLoaderData();
+    const problems = useOutletContext();
 
     return (
         <section className="problems">

@@ -1,16 +1,11 @@
 import React from 'react';
 import LongBarChart from '../../Charts/LongBarChart';
-import { useLoaderData } from 'react-router-dom';
-import { getProblemData } from '../../../utils/MainApi';
+import { useOutletContext } from 'react-router-dom';
 import DoughnutChart from '../../Charts/DoughnutChart';
-
-export function loader() {
-   return getProblemData();
-}
 
 function MainAnalysis() {
 
-   const problems = useLoaderData();
+   const problems = useOutletContext();
 
    const storageProblemList = problems.filter(item => item.reason === 'Хранение');
    const partProblemList = problems.filter(item => item.reason === 'Поставщик');

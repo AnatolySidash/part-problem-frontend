@@ -3,8 +3,9 @@
    margin: 0;
    min-height: 22px;
    border: none;
-   background-color: aquamarine;
-   border-radius: 3px;
+   background-color: #ccc;
+   border-radius: 3px 3px 0 0;
+   border-bottom: 1px solid #757171;
    outline: none;
 }
 

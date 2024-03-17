@@ -1,7 +1,9 @@
 import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useOutletContext } from 'react-router-dom';
 
 function AnalysisLayout() {
+
+    const problems = useOutletContext();
 
     return (
         <>
@@ -15,7 +17,7 @@ function AnalysisLayout() {
                     <NavLink className={({ isActive }) => isActive ? 'analysislayout__link active' : 'analysislayout__link'} to='action'>Проблемы по решению</NavLink>
                     <NavLink className={({ isActive }) => isActive ? 'analysislayout__link active' : 'analysislayout__link'} to='specialist'>Проблемы по сотрудникам</NavLink>
                 </nav >
-                <Outlet />
+                <Outlet context={problems} />
             </div>
         </>
     )

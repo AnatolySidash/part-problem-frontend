@@ -1,9 +1,9 @@
 import React from "react";
 import Main from '../Main/Main.js';
-import Problems, { loader as problemsLoader } from "../Problems/Problems.js";
+import Problems from "../Problems/Problems.js";
 import ProblemDetails from "../ProblemDetails/ProblemDetails.js";
 import NewProblem from "../NewProblem/NewProblem.js";
-import ProblemsLayout from "../ProblemsLayout/ProblemsLayout.js";
+import ProblemsLayout, { loader as problemsLoader } from "../ProblemsLayout/ProblemsLayout.js";
 import InspectionLayout from "../InspectionLayout/InspectionLayout.js";
 import InspectionInline from "../InspectionInline/InspectionInline.js";
 import InspectionWarehouse from "../InspectionWarehouse/InspectionWarehouse.js"
@@ -16,6 +16,18 @@ import ProblemByModel from "../ProblemAnalysisPages/ProblemByModel//ProblemByMod
 import ProblemBySystem from "../ProblemAnalysisPages/ProblemBySystem/ProblemBySystem.js";
 import ProblemByAction from "../ProblemAnalysisPages/ProblemByAction/ProblemByAction.js";
 import ProblemBySpecialist from "../ProblemAnalysisPages/ProblemBySpecialist/ProblemBySpecialist.js"
+import SolarisModel from "../ModelPages/SolarisModel.js";
+import RioModel from "../ModelPages/RioModel.js";
+import CretaModel from "../ModelPages/CretaModel.js";
+import ExteriorSystem from "../SystemPages/ExteriorSystem.js";
+import InteriorSystem from "../SystemPages/InteriorSystem.js";
+import MovingSystem from "../SystemPages/MovingSystem.js";
+import ChassisSystem from "../SystemPages/ChassisSystem.js";
+import ElectricSystem from "../SystemPages/ElectricSystem.js";
+import BackToSupplier from "../ActionPages/BackToSupplier.js";
+import BackToLine from "../ActionPages/BackToLine.js";
+import Scrap from "../ActionPages/Scrap.js";
+import Other from "../ActionPages/Other.js";
 import Layout from '../Layout/Layout.js';
 import {
   RouterProvider,
@@ -28,17 +40,32 @@ const router = createBrowserRouter(createRoutesFromElements(
 
   <Route path="/" element={<Layout />}>
     <Route index element={<Main />} />
-    <Route path="problems" element={<ProblemsLayout />} >
-      <Route index element={<Problems />} loader={problemsLoader} />
+    <Route path="problems" element={<ProblemsLayout />} loader={problemsLoader} >
+      <Route index element={<Problems />} />
       <Route path="newproblem" element={<NewProblem />} />
       <Route path="analysis" element={<AnalysisLayout />}>
-        <Route index element={<MainAnalysis />} loader={problemsLoader} />
-        <Route path="supplier" element={<SupplierProblem />} loader={problemsLoader} />
+        <Route index element={<MainAnalysis />} />
+        <Route path="supplier" element={<SupplierProblem />} />
         <Route path="storage" element={<StorageProblem />} />
-        <Route path="model" element={<ProblemByModel />} loader={problemsLoader} />
-        <Route path="system" element={<ProblemBySystem />} loader={problemsLoader} />
-        <Route path="action" element={<ProblemByAction />} loader={problemsLoader} />
-        <Route path="specialist" element={<ProblemBySpecialist />} loader={problemsLoader} />
+        <Route path="model" element={<ProblemByModel />} >
+          <Route index element={<SolarisModel />} />
+          <Route path="rio" element={<RioModel />} />
+          <Route path="creta" element={<CretaModel />} />
+        </Route>
+        <Route path="system" element={<ProblemBySystem />} >
+          <Route index element={<ExteriorSystem />} />
+          <Route path="interior" element={<InteriorSystem />} />
+          <Route path="moving" element={<MovingSystem />} />
+          <Route path="chassis" element={<ChassisSystem />} />
+          <Route path="electric" element={<ElectricSystem />} />
+        </Route>
+        <Route path="action" element={<ProblemByAction />} >
+          <Route index element={<BackToSupplier />} />
+          <Route path="backToLine" element={<BackToLine />} />
+          <Route path="scrap" element={<Scrap />} />
+          <Route path="other" element={<Other />} />
+        </Route>
+        <Route path="specialist" element={<ProblemBySpecialist />} />
       </Route>
     </Route>
     <Route path="problems/:id" element={<ProblemDetails />} />

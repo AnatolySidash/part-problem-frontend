@@ -1,27 +1,48 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
-import { getProblemData } from '../../../utils/MainApi';
 import SupplierCard from '../../SupplierCard/SupplierCard';
 import TopProblemCard from '../../TopProblemCard/TopProblemCard';
-
-export function loader() {
-   return getProblemData();
-}
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { ru } from "date-fns/locale/ru";
+import { useOutletContext } from 'react-router-dom';
 
 function SupplierProblem() {
 
-   const problems = useLoaderData();
+   const [dateRange, setDateRange] = React.useState([null, null]);
+   const [startDate, endDate] = dateRange;
 
-   const partProblemList = problems.filter(item => item.reason === 'Поставщик');
+   const problems = useOutletContext();
+
+   const getDatesBetween = (startDate, endDate) => {
+      let dates = [];
+      let currentDate = new Date(startDate);
+      while (currentDate <= endDate) {
+         dates.push(new Date(currentDate).toISOString().slice(0, 10));
+         currentDate.setDate(currentDate.getDate() + 1);
+      }
+      return dates;
+   };
+
+   const dateArray = getDatesBetween(startDate, endDate);
+
+   const dateFilteredList = () => {
+      if (startDate !== null && endDate !== null) {
+         let filteredProblems = problems.filter(item => dateArray.includes(item.occur_date.slice(0, 10)));
+         return filteredProblems;
+      }
+      return problems;
+   }
+
+   const partProblemList = dateFilteredList().filter(item => item.reason === 'Поставщик');
 
    const defectBySupplier = partProblemList.reduce((newArray, element) => {
       newArray[element.supplier] = (newArray[element.supplier] || 0) + parseInt(element.defect_qty);
-      return newArray
+      return newArray;
    }, {});
 
    const problemBySupplier = partProblemList.reduce((newArray, element) => {
       newArray[element.supplier] = (newArray[element.supplier] || 0) + element.problem_code.length / 5;
-      return newArray
+      return newArray;
    }, {});
 
    const problemList = Object.entries(problemBySupplier);
@@ -49,6 +70,24 @@ function SupplierProblem() {
       <article className='problem__data'>
          <div className='problem__container'>
             <h2 className='problem__title'>ТОП-10 поставщиков</h2>
+            <div className='problems__search-block'>
+               <div className='datepicker'>
+                  <h3 className='datepicker__title'>Выберите период</h3>
+                  <DatePicker
+                     showIcon
+                     selectsRange={true}
+                     startDate={startDate}
+                     endDate={endDate}
+                     locale={ru}
+                     dateFormat="dd/MM/yyyy"
+                     showWeekNumbers
+                     onChange={(update) => {
+                        setDateRange(update);
+                     }}
+                     isClearable={true}
+                  />
+               </div>
+            </div>
             <div className='problem__block'>
                <ul className='problem__list'>
                   <li className='problem__item'>
@@ -64,7 +103,7 @@ function SupplierProblem() {
             <div className='problem__block'>
                <ul className='problem__list'>
                   <li className='problem__item'>
-                     {problems.sort((a, b) => parseInt(b.defect_qty) - parseInt(a.defect_qty)).slice(0, 3).map((problem, index) => (
+                     {partProblemList.sort((a, b) => parseInt(b.defect_qty) - parseInt(a.defect_qty)).slice(0, 3).map((problem, index) => (
                         <TopProblemCard key={index} problem={problem} />
                      ))}
                   </li>

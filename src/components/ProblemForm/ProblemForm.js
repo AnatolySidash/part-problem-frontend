@@ -12,6 +12,8 @@ function ProblemForm({ problem }) {
       actions.resetForm();
    }
 
+   console.log(problem.occur_date.slice(0, 10));
+
    const formik = useFormik({
       initialValues: {
          occur_date: problem.occur_date.slice(0, 10),

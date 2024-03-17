@@ -6,7 +6,7 @@ function TopProblemCard({ problem }) {
 
    return (
       <article className='topproblemcard'>
-         <h3 className='topproblemcard__title'><Link className='problemcard__data-link' to={`/problems/${problem.id}`}>{problem.model + ' ' + problem.part_name + ' - ' + problem.problem}</Link></h3>
+         <h3 className='topproblemcard__title'><Link className='topproblemcard__data-link' to={`/problems/${problem.id}`}>{problem.model + ' ' + problem.part_name + ' - ' + problem.problem}</Link></h3>
          <ul className='topproblemcard__list'>
             <li className='topproblemcard__item'>
                <div className='topproblemcard__image'>

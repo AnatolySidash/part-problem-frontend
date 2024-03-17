@@ -1,0 +1,15 @@
+.problems__search-button {
+   padding: 7px 15px 8px;
+   margin: 0 0 0 5px;
+   border: none;
+   border-radius: 3px;
+   background-color: blueviolet;
+   outline: none;
+   color: #fff;
+   cursor: pointer;
+   transition: opacity 0.3s ease-in-out;
+}
+
+.problems__search-button:hover {
+   opacity: 0.8;
+}

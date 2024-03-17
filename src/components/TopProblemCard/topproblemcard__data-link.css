@@ -1,11 +1,11 @@
-.problemcard__data-link {
+.topproblemcard__data-link {
    text-decoration: none;
    color: #000;
    font-weight: 500;
    transition: color 0.3s ease-in-out;
-   font-size: 12px;
+   font-size: 16px;
 }
 
-.problemcard__data-link:hover {
+.topproblemcard__data-link:hover {
    color: #919bf0;
 }
