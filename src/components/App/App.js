@@ -28,6 +28,8 @@ import BackToSupplier from "../ActionPages/BackToSupplier.js";
 import BackToLine from "../ActionPages/BackToLine.js";
 import Scrap from "../ActionPages/Scrap.js";
 import Other from "../ActionPages/Other.js";
+import Suppliers from "../Suppliers/Suppliers.js";
+import SupplierProfile from "../SupplierProfile/SupplierProfile.js";
 import Layout from '../Layout/Layout.js';
 import {
   RouterProvider,
@@ -66,6 +68,9 @@ const router = createBrowserRouter(createRoutesFromElements(
           <Route path="other" element={<Other />} />
         </Route>
         <Route path="specialist" element={<ProblemBySpecialist />} />
+      </Route>
+      <Route path="suppliers" element={<Suppliers />}>
+        <Route path=":name" element={<SupplierProfile />} />
       </Route>
     </Route>
     <Route path="problems/:id" element={<ProblemDetails />} />

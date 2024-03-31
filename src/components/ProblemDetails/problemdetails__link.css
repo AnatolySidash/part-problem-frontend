@@ -1,0 +1,9 @@
+.problemdetails__link {
+   text-decoration: none;
+   color: #000;
+   transition: color 0.3s ease-in-out;
+}
+
+.problemdetails__link:hover {
+   color: #919bf0;
+}

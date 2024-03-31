@@ -86,6 +86,7 @@
 @import url(./components/ProblemDetails/problemdetails__photo.css);
 @import url(./components/ProblemDetails/input__error.css);
 @import url(./components/ProblemDetails/input__error-message.css);
+@import url(./components/ProblemDetails/problemdetails__link.css);
 
 /* ------Buttons------ */
 
@@ -146,3 +147,22 @@
 
 @import url(./components/ProblemAnalysisPages/ProblemByModel/models__nav.css);
 @import url(./components/ProblemAnalysisPages/ProblemByModel/models__link.css);
+
+/* ------Suppliers------ */
+
+@import url(./components/Suppliers/suppliers.css);
+@import url(./components/Suppliers/suppliers__nav.css);
+@import url(./components/Suppliers/suppliers__navlist.css);
+@import url(./components/Suppliers/suppliers__navlink.css);
+
+/* ------SuppliersNameCard------ */
+
+@import url(./components/SuppliersNameCard/suppliersnamecard.css);
+
+/* ------SupplierProfile------ */
+
+@import url(./components/SupplierProfile/supplierprofile.css);
+@import url(./components/SupplierProfile/supplierprofile__item.css);
+@import url(./components/SupplierProfile/supplierprofile__title.css);
+@import url(./components/SupplierProfile/supplierprofile__list.css);
+@import url(./components/SupplierProfile/supplierprofile__data.css);

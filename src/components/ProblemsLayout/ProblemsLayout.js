@@ -16,6 +16,7 @@ function ProblemsLayout() {
                 <NavLink end className={({ isActive }) => isActive ? 'problemslayout__link active' : 'problemslayout__link'} to='/problems'>Список проблем</NavLink>
                 <NavLink className={({ isActive }) => isActive ? 'problemslayout__link active' : 'problemslayout__link'} to='newproblem'>Новая проблема</NavLink>
                 <NavLink className={({ isActive }) => isActive ? 'problemslayout__link active' : 'problemslayout__link'} to='analysis'>Аналитика</NavLink>
+                <NavLink className={({ isActive }) => isActive ? 'problemslayout__link active' : 'problemslayout__link'} to='suppliers'>Поставщики</NavLink>
             </nav >
             <Outlet context={problems} />
         </>

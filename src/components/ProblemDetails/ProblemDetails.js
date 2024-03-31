@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { getProblemDetail } from '../../utils/MainApi';
 import ProblemForm from '../ProblemForm/ProblemForm';
 
@@ -22,6 +22,7 @@ function ProblemDetails() {
 
     return (
         <section className="problemdetails">
+            <Link to=".." relative="path" className='problemdetails__link'>&larr; Назад к списку</Link>
             <h1 className="problemdetails__title">Карточка проблемы</h1>
             {problem ? <ProblemForm problem={problem} /> : <p>Loading...</p>}
         </section >
