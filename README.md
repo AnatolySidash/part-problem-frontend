@@ -1,4 +1,4 @@
-# Название проекта: Part Quality Control App
+## Название проекта: Part Quality Control App
 
 Описание: Приложение для регистрации и учёта проблем автокомпонентов на автомобильном предприятии. 
 Использованы технологии: HTML5, CSS3, JavaScript, React, React Router, NodeJS, Express, MySQL 
@@ -7,6 +7,7 @@
 
 - Поиск проблемы по базе данных
 - Добавление новой проблемы в базу данных
+- Валидация формы карточки проблемы
 - Витрина данных: демонстрация данных на графиках, выборка ТОП проблем по критериям (по дате обнаружения, по системам, по поставщикам, по решению и т.п.)
 
 ### Планы по доработке:
@@ -18,13 +19,13 @@
 - Выгрузка списка проблем из базы данных в формате Эксель
 
 ### Список Проблем
-  <img src="/src/images/readme/01.png" title="СписокПроблем" alt="СписокПроблем" width="300" height="300"/>&nbsp;
+  <img src="/src/images/readme/01.png" title="СписокПроблем" alt="СписокПроблем" width="600" height="300"/>&nbsp;
 
 ### Карточка Проблемы
-  <img src="/src/images/readme/02.png" title="КарточкаПроблемы" alt="КарточкаПроблемы" width="300" height="300"/>&nbsp;
+  <img src="/src/images/readme/02.png" title="КарточкаПроблемы" alt="КарточкаПроблемы" width="600" height="300"/>&nbsp;
 
 ### Анализ по Критериям
-  <img src="/src/images/readme/03.png" title="АнализПоКритериям" alt="АнализПоКритериям" width="300" height="300"/>&nbsp;
+  <img src="/src/images/readme/03.png" title="АнализПоКритериям" alt="АнализПоКритериям" width="600" height="300"/>&nbsp;
 
 ### Карточка Поставщика
-  <img src="/src/images/readme/04.png" title="КарточкаПоставщика" alt="КарточкаПоставщика" width="300" height="300"/>&nbsp;
+  <img src="/src/images/readme/04.png" title="КарточкаПоставщика" alt="КарточкаПоставщика" width="600" height="300"/>&nbsp;
